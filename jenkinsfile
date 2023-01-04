@@ -13,8 +13,11 @@ pipeline{
             }
         }
         stage('Test'){
-            sh "mvn test"
-            echo "maven successfully build and tested"
+
+            steps{
+                sh "mvn test"
+                echo "maven successfully build and tested"
+            }    
         }
     }
 }
