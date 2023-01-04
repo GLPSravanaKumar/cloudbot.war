@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('init'){
+            steps{
+                git branch: 'master' , url: 'https://github.com/Akshay16-6/cloudbot.war.git'
+            }
+        }
+        stage('build'){
+            steps{
+                sh "mvn clean install"
+            }
+        }
+        stage('Test'){
+            sh "mvn test"
+            echo "maven successfully build and tested"
+        }
+    }
+}
