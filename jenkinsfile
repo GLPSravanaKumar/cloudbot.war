@@ -9,14 +9,14 @@ pipeline{
         }
         stage('build'){
             steps{
-                sh "mvn clean install"
+                sh "npm -i"
             }
         }
         stage('Test'){
 
             steps{
-                sh "mvn test"
-                echo "maven successfully build and tested"
+                sh "npm test"
+                echo "npm successfully build and tested"
             }    
         }
     }
